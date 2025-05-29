@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Eduarda · Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #222;
+      --accent-color: #4f46e5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .project {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      text-align: left;
+    }
+
+    .project h2 {
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Maria Eduarda</h1>
+    <p>Olá! Sou uma profissional focada em automações inteligentes com UiPath, Looker Studio, Make e n8n. Aqui estão alguns dos meus projetos favoritos:</p>
+
+    <div class="projects">
+      <div class="project">
+        <h2>📊 Dashboard de Cotações</h2>
+        <p>Dashboard no Looker Studio com dados dinâmicos do banco Atlantis, mostrando status de cotações em tempo real.</p>
+      </div>
+      <div class="project">
+        <h2>🤖 Automação de E-mails com Make + Outlook</h2>
+        <p>Criei um robô que monitora e-mails com palavras-chave, organiza em planilhas e envia alertas automáticos.</p>
+      </div>
+      <div class="project">
+        <h2>📈 Histórico de Profit com UiPath</h2>
+        <p>Automatizei a geração mensal de relatórios comparativos de lucros por processo, com controle de versões e análises.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Entre em contato pelo <a href="mailto:seuemail@gmail.com">e-mail</a> ou <a href="https://www.linkedin.com/in/seulink">LinkedIn</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
