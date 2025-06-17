@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Maria Eduarda Ferreira</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      background-color: #fff;
+      padding: 60px 0;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #209869;
+      background-color: #e9f7f2;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 25px;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #209869;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Projetos */
+    .projects h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #209869;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card h3,
+    .project-card h2 {
+      color: #209869;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #555;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #209869;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+      margin-top: 60px;
+    }
+
+    .footer p {
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="imagens/foto.jpeg" alt="Minha Foto" class="profile-img" />
+      <h1>Maria Eduarda Ferreira</h1>
+      <p>Desenvolvedora | Dados | Automação</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Seção Projetos Acadêmicos -->
+    <section class="projects">
+      <h2>Projetos Acadêmicos</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>Curso Online Metodologia Ágil SCRUM - 1º SEMESTRE</h3>
+          <p>Aplicação Web sobre Scrum desenvolvida como projeto do 1° semestre na FATEC Jacareí.</p>
+          <a href="https://github.com/TechWizards-Tech/DSM-1" target="_blank">Ver projeto</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Contador de Calorias - 2º SEMESTRE</h3>
+          <p>Aplicação Web que calcula calorias e sugere dietas, desenvolvida no 2° semestre na FATEC Jacareí.</p>
+          <a href="https://github.com/TechWizards-Tech/DSM-2" target="_blank">Ver projeto</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Plataforma de Dados Meteorológicos - 3º SEMESTRE</h3>
+          <p>Plataforma web para visualização de dados meteorológicos, desenvolvida no 3° semestre da FATEC Jacareí.</p>
+          <a href="https://github.com/TechWizards-Tech/HALF-WIZARDS---DSM-3.git" target="_blank">Ver projeto</a>
+        </div>
+      </div>
+
+      <!-- Seção Projetos Pessoais -->
+      <h2>Projetos Pessoais</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>Gerador de PDF</h3>
+          <p>Projeto em Python + Flask que gera um PDF estilizado com informações comerciais extraídas automaticamente de um banco de dados MySQL.</p>
+          <a href="https://github.com/ferreira-me/GERADOR_PDF.git" target="_blank">Ver projeto</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Extração Dados RD STATION</h3>
+          <p>Ferramenta que extrai e organiza dados das APIs do RD Station, exportando para Excel e Google Sheets.</p>
+          <a href="https://github.com/ferreira-me/RDSTATION_DATA_EXTRACTOR.git" target="_blank">Ver projeto</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Buscador de valores no Banco de Dados</h3>
+          <p>Script Python que busca uma palavra em todas as colunas textuais de um banco MySQL, ignorando maiúsculas/minúsculas.</p>
+          <a href="https://github.com/ferreira-me/BUSCADOR_PALAVRA_BANCO_DE_DADOS.git" target="_blank">Ver projeto</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Maria Eduarda . Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
