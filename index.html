@@ -51,29 +51,98 @@
     .kicker{font-size:.95rem; color:var(--muted); letter-spacing:.02em}
     .title{font-size: clamp(2.2rem, 4vw, 3.6rem); line-height:1.02; font-weight:800; margin:8px 0 10px}
     .cta-row{display:flex; gap:16px; align-items:center; margin-top:18px}
-    .btn{--glow:rgba(32,152,105,.35);position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;font-weight:700;letter-spacing:.2px;color:var(--ink);background:var(--card);box-shadow:0 2px 0 rgba(0,0,0,.05),0 8px 22px rgba(0,0,0,.10);z-index:2;border:none}
-.btn::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.8px;background:linear-gradient(120deg,var(--accent),#7fd8b7,#1f1f1f);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.btn:hover{transform:translateY(-1px);box-shadow:0 10px 26px var(--glow);background:color-mix(in oklab,var(--accent) 16%, var(--card))}
-.btn:active{transform:translateY(0);box-shadow:0 2px 14px var(--glow)}
-.btn:focus-visible{outline:4px solid color-mix(in oklab,var(--accent) 55%, transparent);outline-offset:3px}
-.btn svg{width:20px;height:20px;transition:transform .25s ease}
-.btn:hover svg{transform:translateX(4px)}
+    .btn{
+      --glow:rgba(32,152,105,.35);
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.2px;
+      color:var(--ink);
+      background:var(--card);
+      box-shadow:0 2px 0 rgba(0,0,0,.05),0 8px 22px rgba(0,0,0,.10);
+      z-index:2;
+      border:none
+    }
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      padding:1.8px;
+      background:linear-gradient(120deg,var(--accent),#7fd8b7,#1f1f1f);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px var(--glow);
+      background:color-mix(in oklab,var(--accent) 16%, var(--card))
+    }
+    .btn:active{
+      transform:translateY(0);
+      box-shadow:0 2px 14px var(--glow)
+    }
+    .btn:focus-visible{
+      outline:4px solid color-mix(in oklab,var(--accent) 55%, transparent);
+      outline-offset:3px
+    }
+    .btn svg{width:20px;height:20px;transition:transform .25s ease}
+    .btn:hover svg{transform:translateX(4px)}
 
     /* Foto com moldura circular e shape por trás */
     .photo-wrap{position:relative; width:min(440px, 80vw); margin-inline:auto}
-    .photo-wrap::before{content:""; position:absolute; width:260px; height:260px; background:#1f1f1f; border-radius:50%; left:-18%; top:18%; z-index:0}
-    .photo{position:relative; z-index:2; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:50%; border:2px solid #bcb6b1; background:#ddd; box-shadow:var(--shadow)}
+    .photo-wrap::before{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      background:#1f1f1f;
+      border-radius:50%;
+      left:-18%;
+      top:18%;
+      z-index:0
+    }
+    .photo{
+      position:relative;
+      z-index:2;
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:50%;
+      border:2px solid #bcb6b1;
+      background:#ddd;
+      box-shadow:var(--shadow)
+    }
 
     /* Bloco de descrição à direita (como no anexo) */
     .side-note{position:relative; z-index:2; max-width:360px; color:#3a3a3a}
     @media (prefers-color-scheme: dark){ .side-note{color:#d5d5d5} }
 
     /* Indicador de scroll */
-    .scroll-cue{position:absolute; left:50%; transform:translateX(-50%); bottom:16px; font-size:.9rem; color:var(--muted)}
+    .scroll-cue{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:16px;
+      font-size:.9rem;
+      color:var(--muted)
+    }
 
     /* ======= Projetos ======= */
     section#projetos{padding:70px 0}
     .section-title{font-size:1.6rem; font-weight:800; margin-bottom:24px}
+    .section-subtitle{
+      font-size:1.1rem;
+      font-weight:700;
+      margin:32px 0 12px;
+      color:var(--muted);
+    }
     .projects{display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:18px}
     .card{background:var(--card); border:1px solid var(--stroke); border-radius:14px; padding:18px; box-shadow:var(--shadow)}
     .card h3{font-size:1.05rem; margin-bottom:6px}
@@ -81,9 +150,26 @@
     .card a{display:inline-flex; align-items:center; gap:8px; margin-top:10px; font-weight:600}
     .card a svg{width:18px; height:18px}
 
-    /* ======= Ícones laterais (opcional) ======= */
-    .side-icons{position:fixed; right:16px; top:40%; display:flex; flex-direction:column; gap:10px; z-index:10}
-    .side-icons a{width:42px; height:42px; display:grid; place-items:center; border-radius:50%; background:var(--card); border:1px solid var(--stroke); box-shadow:var(--shadow)}
+    /* ======= Ícones laterais (Contatos: apenas redes sociais) ======= */
+    .side-icons{
+      position:fixed;
+      right:16px;
+      top:40%;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:10
+    }
+    .side-icons a{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow)
+    }
 
     /* ======= Responsivo ======= */
     @media (max-width: 900px){
@@ -91,39 +177,34 @@
       .hero::before{top:48%}
       .side-note{order:3}
     }
-    /* --- Hover com cor nos cards de projeto (NÃO remover nada acima) --- */
-.card {
-  position: relative;
-  overflow: hidden;
-  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-}
 
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* tinta verde suave; ajusta a opacidade se quiser mais/menos destaque */
-  background: linear-gradient(135deg, rgba(32,152,105,.14), rgba(32,152,105,0) 70%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .28s ease;
-}
+    /* --- Hover com cor nos cards de projeto --- */
+    .card {
+      position: relative;
+      overflow: hidden;
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0,0,0,.14);
-  border-color: rgba(32,152,105,.35); /* borda com tom do accent */
-}
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(32,152,105,.14), rgba(32,152,105,0) 70%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .28s ease;
+    }
 
-.card:hover::after { opacity: 1; }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,.14);
+      border-color: rgba(32,152,105,.35); /* borda com tom do accent */
+    }
 
-.card h3 { transition: color .28s ease; }
-.card:hover h3 { color: var(--accent); }
+    .card:hover::after { opacity: 1; }
 
-/* (opcional) efeito glass sutil no hover:
-.card::after { backdrop-filter: blur(3px); }
-*/
-
+    .card h3 { transition: color .28s ease; }
+    .card:hover h3 { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -134,17 +215,31 @@
       <div class="brand" aria-label="Maria Eduarda Ferreira">
         <span class="logo" aria-hidden="true"><i></i><i></i></span>
         <span>Maria&nbsp;Eduarda&nbsp;Ferreira</span>
+      </div>
+    </div>
   </header>
 
-  <!-- Ícones laterais (ex.: LinkedIn e e-mail) -->
+  <!-- Ícones laterais (Contatos: LinkedIn e GitHub) -->
   <aside class="side-icons" aria-label="Contatos">
-    <a href="https://www.linkedin.com/in/mariafs15" target="_blank" rel="noopener noreferrer" title="LinkedIn — mariafs15" aria-label="Abrir LinkedIn de Maria Eduarda Ferreira">
+    <a href="https://www.linkedin.com/in/mariafs15" target="_blank" rel="noopener noreferrer"
+       title="LinkedIn — mariafs15"
+       aria-label="Abrir LinkedIn de Maria Eduarda Ferreira">
       <!-- ícone linkedin -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2c-1.1 0-2 .9-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2c-1.1 0-2 .9-2 2v7h-4v-7a6 6 0 016-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
     </a>
-    <a href="mailto:mferreira1502s@gmail.com" title="E-mail">
-      <!-- ícone e-mail -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    <a href="https://github.com/ferreira-me" target="_blank" rel="noopener noreferrer"
+       title="GitHub — ferreira-me"
+       aria-label="Abrir GitHub de Maria Eduarda Ferreira">
+      <!-- ícone github -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-.9-.3-1.5-.7-1.9 2.3-.3 4.7-1.1 4.7-5
+        0-1-.4-1.9-1-2.6.1-.3.4-1.3-.1-2.6 0 0-.9-.3-2.8 1-1.6-.4-3.3-.4-4.9 0-1.9-1.3-2.8-1-2.8-1
+        -.5 1.3-.2 2.3-.1 2.6-.6.7-1 1.6-1 2.6 0 3.9 2.4 4.7 4.7 5-.3.3-.6.8-.7 1.5" />
+      </svg>
     </a>
   </aside>
 
@@ -155,7 +250,13 @@
         <p class="kicker">Olá — prazer em te ver aqui</p>
         <h1 class="title">Maria Eduarda Ferreira</h1>
         <div class="cta-row">
-          <a class="btn" href="#projetos" aria-label="Ir para a seção de projetos"><span>Ver projetos</span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></a>
+          <a class="btn" href="#projetos" aria-label="Ir para a seção de projetos">
+            <span>Ver projetos</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </a>
         </div>
       </div>
 
@@ -163,7 +264,10 @@
         <img src="imagens/foto.jpeg" alt="Foto de Maria Eduarda Ferreira" class="photo" width="420" height="420" loading="eager" />
       </div>
 
-      <p class="side-note">Desenvolvedora especializada em dados e automação. Gosto de construir soluções simples, acessíveis e robustas para problemas reais.</p>
+      <p class="side-note">
+        Desenvolvedora especializada em dados e automação. Gosto de construir soluções simples,
+        acessíveis e robustas para problemas reais.
+      </p>
     </div>
     <div class="scroll-cue">role para ver os projetos ↓</div>
   </section>
@@ -171,58 +275,129 @@
   <!-- Projetos -->
   <main id="projetos" class="container" role="main">
     <h2 class="section-title">Projetos realizados</h2>
+
+    <!-- Acadêmicos -->
+    <h3 class="section-subtitle">Acadêmicos</h3>
     <div class="projects">
       <article class="card">
         <h3>Curso Online Metodologia Ágil SCRUM — 1º semestre</h3>
         <p>Aplicação web sobre Scrum desenvolvida como projeto do 1° semestre na FATEC Jacareí.</p>
-        <a href="https://github.com/TechWizards-Tech/DSM-1" target="_blank" rel="noopener noreferrer">Ver projeto
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/><path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/></svg>
+        <a href="https://github.com/TechWizards-Tech/DSM-1" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </a>
       </article>
+
       <article class="card">
         <h3>Contador de Calorias — 2º semestre</h3>
         <p>Aplicação web que calcula calorias e sugere dietas, desenvolvida no 2° semestre na FATEC Jacareí.</p>
-        <a href="https://github.com/TechWizards-Tech/DSM-2" target="_blank" rel="noopener noreferrer">Ver projeto
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/><path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/></svg>
+        <a href="https://github.com/TechWizards-Tech/DSM-2" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </a>
       </article>
+
       <article class="card">
         <h3>Plataforma de Dados Meteorológicos — 3º semestre</h3>
         <p>Plataforma web para visualização de dados meteorológicos, desenvolvida no 3° semestre da FATEC Jacareí.</p>
-        <a href="https://github.com/TechWizards-Tech/HALF-WIZARDS---DSM-3.git" target="_blank" rel="noopener noreferrer">Ver projeto
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/><path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/></svg>
+        <a href="https://github.com/TechWizards-Tech/HALF-WIZARDS---DSM-3.git" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </a>
       </article>
+
+      <article class="card">
+        <h3>Sistema de Captura Remota para Microscópios — 4º semestre</h3>
+        <p>
+          O sistema coleta imagens e vídeos de microscópios ópticos por meio de uma câmera digital acoplada,
+          transmite o fluxo de vídeo em tempo real via Wi-Fi para um servidor em nuvem, e disponibiliza
+          aplicativo mobile e interface web para visualização e armazenamento de snapshots. O projeto atende
+          aos microscópios disponíveis na FATEC Jacareí e visa melhorar a experiência didática dos alunos.
+        </p>
+        <a href="https://github.com/TechWizards-Tech/TECH-WIZARDS-DSM-4.git" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </a>
+      </article>
+    </div>
+
+    <!-- Profissionais -->
+    <h3 class="section-subtitle">Profissionais</h3>
+    <div class="projects">
       <article class="card">
         <h3>Gerador de PDF</h3>
         <p>Projeto em Python + Flask que gera um PDF estilizado com informações comerciais extraídas automaticamente de um banco de dados MySQL.</p>
-        <a href="https://github.com/ferreira-me/GERADOR_PDF.git" target="_blank" rel="noopener noreferrer">Ver projeto
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/><path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/></svg>
+        <a href="https://github.com/ferreira-me/GERADOR_PDF.git" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </a>
       </article>
+
       <article class="card">
         <h3>Extração dados RD Station</h3>
         <p>Ferramenta que extrai e organiza dados das APIs do RD Station, exportando para Excel e Google Sheets.</p>
-        <a href="https://github.com/ferreira-me/RDSTATION_DATA_EXTRACTOR.git" target="_blank" rel="noopener noreferrer">Ver projeto
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/><path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/></svg>
+        <a href="https://github.com/ferreira-me/RDSTATION_DATA_EXTRACTOR.git" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </a>
       </article>
+
+      <article class="card">
+        <h3>Extração de dados com API para implementar em dashboard — ShipsGo</h3>
+        <p>
+          Integração que insere e consulta status de remessas via API da ShipsGo e consolida os resultados
+          para visualização e alertas. <strong>Repositório privado</strong>.
+        </p>
+        <a href="mailto:mferreira1502s@gmail.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20ShipsGo&body=Ol%C3%A1%20Maria%2C%0D%0AQuero%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20projeto%20de%20integra%C3%A7%C3%A3o%20com%20a%20API%20da%20ShipsGo.%0D%0AObrigada(o)!"
+           aria-label="Solicitar demonstração do projeto ShipsGo">
+          Solicitar demonstração
+        </a>
+      </article>
+
+      <article class="card">
+        <h3>Transforma dados em decisões com IA</h3>
+        <p>
+          Construo pipelines e modelos que coletam, limpam e analisam dados para gerar previsões, insights e
+          dashboards acionáveis. <strong>Repositório privado</strong>.
+        </p>
+        <a href="mailto:mferreira1502s@gmail.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20projeto%20IA&body=Ol%C3%A1%20Maria%2C%0D%0AQuero%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20projeto%20de%20IA%20para%20transformar%20dados%20em%20decis%C3%B5es.%0D%0AObrigada(o)!"
+           aria-label="Solicitar demonstração do projeto de IA">
+          Solicitar demonstração
+        </a>
+      </article>
+    </div>
+
+    <!-- Pessoais -->
+    <h3 class="section-subtitle">Pessoais</h3>
+    <div class="projects">
       <article class="card">
         <h3>Buscador de valores no Banco de Dados</h3>
         <p>Script Python que busca uma palavra em todas as colunas textuais de um banco MySQL, ignorando maiúsculas/minúsculas.</p>
-        <a href="https://github.com/ferreira-me/BUSCADOR_PALAVRA_BANCO_DE_DADOS.git" target="_blank" rel="noopener noreferrer">Ver projeto
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/><path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/></svg>
+        <a href="https://github.com/ferreira-me/BUSCADOR_PALAVRA_BANCO_DE_DADOS.git" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </a>
-      </article>
-      <article class="card">
-        <h3>Extração de dados com API para implementar em dashboard — ShipsGo </h3>
-        <p>Integração que insere e consulta status de remessas via API da ShipsGo e consolida os resultados para visualização e alertas. <strong>Repositório privado</strong>.</p>
-        <a href="mailto:mferreira1502s@gmail.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20ShipsGo&body=Ol%C3%A1%20Maria%2C%0D%0AQuero%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20projeto%20de%20integra%C3%A7%C3%A3o%20com%20a%20API%20da%20ShipsGo.%0D%0AObrigada(o)!" aria-label="Solicitar demonstração do projeto ShipsGo">Solicitar demonstração</a>
-      </article>
-      <article class="card">
-        <h3>Transforma dados em decisões com IA</h3>
-        <p>Construo pipelines e modelos que coletam, limpam e analisam dados para gerar previsões, insights e dashboards acionáveis. <strong>Repositório privado</strong>.</p>
-        <a href="mailto:mferreira1502s@gmail.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20ShipsGo&body=Ol%C3%A1%20Maria%2C%0D%0AQuero%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20projeto%20de%20integra%C3%A7%C3%A3o%20com%20a%20API%20da%20ShipsGo.%0D%0AObrigada(o)!" aria-label="Solicitar demonstração do projeto ShipsGo">Solicitar demonstração</a>
       </article>
     </div>
   </main>
@@ -232,4 +407,3 @@
   </footer>
 </body>
 </html>
-
